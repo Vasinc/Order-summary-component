@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+$pale-blue: hsl(225, 100%, 94%)
+$bright-blue: hsl(245, 75%, 52%)
+
+$very-pale-blue: hsl(225, 100%, 98%)
+$desaturated-blue: hsl(224, 23%, 55%)
+$dark-blue: hsl(223, 47%, 23%)
+
+*, *::before, *::after 
+    box-sizing: border-box
+
+
+body
+    margin: 0
+    padding: 0
+    font-family: 'Red Hat Display', sans-serif;
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $pale-blue url(./images/pattern-background-desktop.svg) no-repeat
+    
+
+.main-card
+    max-width: 450px
+    min-width: 375px
+    overflow: hidden
+    border-radius: 1rem
+    background: white
+
+    &__body--title
+        text-align: center
+        font-size: 24px
+        color: $dark-blue
+        font-weight: 900
+        margin-top: 2rem
+
+    &__body--text
+        text-align: center
+        color: $desaturated-blue
+        font-weight: 700
+        padding: 0 4rem
+
+    &__body--plan
+        background: $very-pale-blue
+        margin: 0 2rem
+        border-radius: 1rem
+
+        li
+            list-style: none
+            display: flex
+            align-items: center
+            padding: 1rem 0
+
+            .annual-plan
+                padding: 0 6.5rem 0 1rem
+
+                .plan 
+                    padding-bottom: 0.5rem
+                    color: $dark-blue
+                    font-weight: 900
+
+                .price
+                    color: $desaturated-blue
+
+            a 
+                color: $bright-blue
+                font-weight: 700
+                transition: color 250ms ease-in
+
+                &:hover
+                    color: lighten($bright-blue, 10%)
+                    
+
+    .buttons
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        .button-proceed
+            background: $bright-blue
+            border-radius: 1rem
+            padding: 1rem 7rem
+            margin: 2rem 0 0 0
+            text-decoration: none
+            color: white
+            font-weight: 700
+            box-shadow: 0 1.3rem .6rem 0 $pale-blue
+            transition: background 250ms linear, transform 250ms ease-out
+
+            &:hover
+                color: white
+                background: $desaturated-blue
+                transform: scale(1.1)
+            
+        .button-cancel
+            text-decoration: none
+            padding: 0 2rem
+            margin: 1.5rem 0 2rem 0
+            color: $desaturated-blue
+            font-weight: 700
+            transition: color 250ms ease-in
+
+            &:hover
+                color: $dark-blue
+
+@media (max-width: 500px) 
+    body 
+        background: $pale-blue url(./images/pattern-background-mobile.svg) no-repeat
+
+    .main-card
+        width: 375px
+
+        &__body--title
+            margin-top: 1rem
+
+        &__body--text
+            padding: 0
+
+        &__body--plan
+
+            li 
+                .annual-plan
+                    padding: 0 2.5rem 0 1rem
+
+        .buttons
+            .button-proceed
+                padding: 1rem 4rem
+
+
+        
